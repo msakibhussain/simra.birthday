@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Simra ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@ font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#ff4e8a,#ff9ac2);
 color:white;
 text-align:center;
-min-height:100vh;
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -24,8 +24,8 @@ overflow:hidden;
 
 .container{
 max-width:700px;
-padding:40px 25px;
-background:rgba(255,255,255,0.08);
+padding:40px;
+background:rgba(255,255,255,0.1);
 backdrop-filter:blur(8px);
 border-radius:20px;
 box-shadow:0 15px 40px rgba(0,0,0,0.25);
@@ -33,14 +33,13 @@ box-shadow:0 15px 40px rgba(0,0,0,0.25);
 
 h1{
 font-family:'Great Vibes',cursive;
-font-size:56px;
+font-size:60px;
 margin-bottom:10px;
 }
 
 p{
 font-size:18px;
 line-height:1.6;
-margin:8px 0;
 }
 
 button{
@@ -49,41 +48,37 @@ border:none;
 border-radius:30px;
 font-size:16px;
 cursor:pointer;
-margin-top:25px;
 background:white;
 color:#ff2f75;
 font-weight:600;
 transition:0.3s;
+position:fixed;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
 }
 
 button:hover{
-transform:scale(1.08);
+transform:translateX(-50%) scale(1.1);
 }
 
-.hidden{display:none}
-
-img{
-width:200px;
-border-radius:16px;
-margin-top:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+.hidden{
+display:none;
 }
 
 .cake{
 font-size:80px;
 margin-bottom:10px;
-animation:bounce 1.6s infinite;
+animation:bounce 1.5s infinite;
 }
 
 @keyframes bounce{
 0%,100%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
+50%{transform:translateY(-10px)}
 }
 
 .typing{
 margin-top:20px;
-font-size:19px;
-line-height:1.7;
 border-right:3px solid white;
 white-space:nowrap;
 overflow:hidden;
@@ -130,11 +125,11 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.9);
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
-font-size:34px;
 font-family:'Great Vibes',cursive;
+font-size:40px;
 }
 
 .skyName{
@@ -153,22 +148,11 @@ animation:showName 3s forwards;
 100%{opacity:1;transform:translate(-50%,-50%)}
 }
 
-.notification{
-position:fixed;
-bottom:25px;
-right:25px;
-background:white;
-color:#ff2f75;
-padding:12px 20px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-font-weight:600;
-animation:slideIn 1s forwards;
-}
-
-@keyframes slideIn{
-from{transform:translateX(200px);opacity:0}
-to{transform:translateX(0);opacity:1}
+.couple-photo{
+width:260px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
 </style>
@@ -177,7 +161,7 @@ to{transform:translateX(0);opacity:1}
 <body>
 
 <audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3">
 </audio>
 
 <div class="container" id="screen1">
@@ -189,8 +173,6 @@ to{transform:translateX(0);opacity:1}
 <p>The most beautiful girl in my life.</p>
 <p>Aaj ka din special hai kyunki aaj tum paida hui thi.</p>
 <p>Meri life ki sabse beautiful story tum ho.</p>
-
-<img src="https://i.imgur.com/6VBx3io.png" alt="Simra" />
 
 <button onclick="next('screen2')">⚠️ Yahan Click Mat Karna</button>
 
@@ -213,7 +195,7 @@ to{transform:translateX(0);opacity:1}
 <h1>Ab Sach Suno ❤️</h1>
 
 <div class="typing">
-Simra, tum meri life ka sabse beautiful part ho. Tumhari smile meri weakness hai, tumhari awaaz meri favourite music hai, aur tum meri life ki sabse pyari habit ho. Happy Birthday to the girl who owns my heart completely. I love you more than words can ever explain.
+Simra, tum meri life ka sabse beautiful part ho. Tumhari smile meri weakness hai, tumhari awaaz meri favourite music hai, aur tum meri life ki sabse pyari habit ho. Happy Birthday to the girl who owns my heart completely.
 </div>
 
 <button onclick="finalLove()">💖 Ek Last Surprise</button>
@@ -223,18 +205,20 @@ Simra, tum meri life ka sabse beautiful part ho. Tumhari smile meri weakness hai
 <div id="lovePopup" class="popup hidden">
 
 <div>I Love You Simra ❤️</div>
-<div style="font-size:20px;margin-top:10px">Will you stay with me forever?</div>
+
+<img src="photo.jpg" class="couple-photo">
+
+<p style="font-size:22px">Forever with you 💖</p>
 
 </div>
 
-<div id="skyText" class="skyName hidden">SIMRA ❤️</div>
+<div id="skyText" class="skyName">SIMRA ❤️</div>
 
 <script>
 
 function next(id){
 
 document.querySelectorAll('.container').forEach(x=>x.classList.add('hidden'));
-
 document.getElementById(id).classList.remove('hidden');
 
 }
@@ -256,23 +240,10 @@ setInterval(createHeart,300);
 
 function finalLove(){
 
-const popup=document.getElementById('lovePopup');
-popup.classList.remove('hidden');
+document.getElementById('lovePopup').classList.remove('hidden');
 
 const sky=document.getElementById('skyText');
-sky.classList.remove('hidden');
-
-navigator.vibrate?.(200);
-
-setTimeout(()=>{
-
-const note=document.createElement('div');
-note.className='notification';
-note.innerText='New message: I Love You Simra ❤️';
-
-document.body.appendChild(note);
-
-},2000);
+sky.style.opacity=1;
 
 }
 
