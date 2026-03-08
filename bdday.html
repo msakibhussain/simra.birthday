@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Simra ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#ff4e8a,#ff9ac2);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.container{
+position:relative;
+z-index:2;
+padding:40px;
+}
+
+h1{font-size:3em;margin-top:20px}
+
+p{font-size:18px}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin-top:30px;
+background:white;
+color:#ff2f75;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{transform:scale(1.1)}
+
+.hidden{display:none}
+
+img{
+width:190px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.heart{
+position:absolute;
+width:20px;
+height:20px;
+background:red;
+transform:rotate(45deg);
+animation:float 6s linear infinite;
+}
+
+.heart:before,.heart:after{
+content:"";
+position:absolute;
+width:20px;
+height:20px;
+background:red;
+border-radius:50%;
+}
+
+.heart:before{top:-10px}
+.heart:after{left:-10px}
+
+@keyframes float{
+0%{transform:translateY(100vh) rotate(45deg)}
+100%{transform:translateY(-10vh) rotate(45deg)}
+}
+
+.cake{
+font-size:90px;
+animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+}
+
+.typing{
+border-right:3px solid white;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 6s steps(60,end) forwards;
+font-size:20px;
+margin:auto;
+max-width:650px;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+font-size:30px;
+text-align:center;
+}
+
+.firework{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+animation:explode 1s ease-out forwards;
+}
+
+@keyframes explode{
+0%{transform:translate(0,0);opacity:1}
+100%{transform:translate(var(--x),var(--y));opacity:0}
+}
+
+.skyName{
+position:fixed;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:60px;
+font-weight:bold;
+opacity:0;
+animation:showName 3s forwards;
+}
+
+@keyframes showName{
+0%{opacity:0;transform:translate(-50%,-80%)}
+100%{opacity:1;transform:translate(-50%,-50%)}
+}
+
+.notification{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+color:#ff2f75;
+padding:12px 18px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+font-weight:bold;
+animation:slideIn 1s forwards;
+}
+
+@keyframes slideIn{
+from{transform:translateX(200px);opacity:0}
+to{transform:translateX(0);opacity:1}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="screen1">
+<div class="cake">🎂</div>
+<h1>Happy Birthday Simra ❤️</h1>
+<p>The most beautiful girl in my life.</p>
+<p>Aaj ka din special hai kyunki aaj tum paida hui thi.</p>
+<p>Meri life ki sabse beautiful story tum ho.</p>
+
+<img src="https://i.imgur.com/6VBx3io.png" alt="Simra" />
+
+<button onclick="next('screen2')">⚠️ Yahan Click Mat Karna</button>
+</div>
+
+<div class="container hidden" id="screen2">
+<h1>Simra 😏</h1>
+<p>Kyu kar diya click?</p>
+<p>Maine mana kiya tha na...</p>
+<p>Ab to tum gayi kaam se 😈</p>
+<button onclick="next('screen3')">❌ Ab Yaha Mat Karna Click</button>
+</div>
+
+<div class="container hidden" id="screen3">
+<h1>Ab Sach Suno ❤️</h1>
+
+<div class="typing">
+Simra, tum meri life ka sabse beautiful part ho. Tumhari smile meri weakness hai, tumhari awaaz meri favourite music hai, aur tum meri life ki sabse pyari habit ho. Happy Birthday to the girl who owns my heart completely. I love you more than words can ever explain.
+</div>
+
+<button onclick="finalLove()">💖 Ek Last Surprise</button>
+</div>
+
+<div id="lovePopup" class="popup hidden">
+<div>I Love You Simra ❤️</div>
+<div style="font-size:20px;margin-top:20px">Will you stay with me forever?</div>
+</div>
+
+<div id="skyText" class="skyName hidden">SIMRA ❤️</div>
+
+<script>
+function next(id){
+document.querySelectorAll('.container').forEach(x=>x.classList.add('hidden'));
+document.getElementById(id).classList.remove('hidden');
+}
+
+function createHeart(){
+const heart=document.createElement('div');
+heart.className='heart';
+heart.style.left=Math.random()*100+'vw';
+heart.style.animationDuration=(Math.random()*3+3)+'s';
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,300);
+
+function finalLove(){
+const popup=document.getElementById('lovePopup');
+popup.classList.remove('hidden');
+
+const sky=document.getElementById('skyText');
+sky.classList.remove('hidden');
+
+for(let i=0;i<100;i++){
+const fw=document.createElement('div');
+fw.className='firework';
+fw.style.left='50%';
+fw.style.top='50%';
+fw.style.setProperty('--x',(Math.random()*500-250)+'px');
+fw.style.setProperty('--y',(Math.random()*500-250)+'px');
+document.body.appendChild(fw);
+setTimeout(()=>fw.remove(),1000);
+}
+
+navigator.vibrate?.(200);
+
+setTimeout(()=>{
+const note=document.createElement('div');
+note.className='notification';
+note.innerText='New message: I Love You Simra ❤️';
+document.body.appendChild(note);
+},2000);
+}
+</script>
+
+</body>
+</html>
