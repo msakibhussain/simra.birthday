@@ -23,7 +23,12 @@ justify-content:center;
 color:white;
 overflow:hidden;
 
-background:linear-gradient(135deg,#ff9ac2,#ffc1da);
+/* NEW BACKGROUND */
+
+background-image:url("https://www.transparenttextures.com/patterns/hearts.png"),
+linear-gradient(black,black);
+
+background-size:180px,cover;
 
 }
 
@@ -33,9 +38,9 @@ background:linear-gradient(135deg,#ff9ac2,#ffc1da);
 position:fixed;
 bottom:-20px;
 font-size:20px;
-color:#ff5fa2;
+color:#ff4d6d;
 animation:float 6s linear infinite;
-opacity:.8;
+opacity:.9;
 }
 
 @keyframes float{
@@ -60,12 +65,12 @@ width:90%;
 max-width:650px;
 padding:40px 30px;
 
-background:rgba(255,255,255,0.2);
+background:rgba(0,0,0,0.55);
 backdrop-filter:blur(12px);
 
 border-radius:25px;
 
-box-shadow:0 15px 50px rgba(0,0,0,0.3);
+box-shadow:0 15px 50px rgba(0,0,0,0.5);
 
 text-align:center;
 
@@ -96,8 +101,8 @@ padding:14px 32px;
 border:none;
 border-radius:30px;
 
-background:white;
-color:#ff2f75;
+background:#ff4d6d;
+color:white;
 
 font-weight:600;
 
@@ -160,11 +165,11 @@ location.reload();
 
 <div class="card hidden" id="s2">
 
-<h1>Simraaaaaa! </h1>
+<h1>Simraaaaaa!</h1>
 
 <p>Kyu kar diya click?</p>
-<p>Chalo ab age ke surprise ke liye ready ho jao bahut pyara hai </p>
-<p>Muwaaahhhhhh bbyyyyyyyyyy😚</p>
+<p>Chalo ab age ke surprise ke liye ready ho jao bahut pyara hai</p>
+<p>Muwaaahhhhhh bbyyyyyyyyyy 😚</p>
 
 <button onclick="next('s3')">❌ Ab Yaha Mat Karna Click</button>
 
@@ -174,11 +179,11 @@ location.reload();
 
 <div class="card hidden" id="s3">
 
-<h1>Ji kar hi diya click akhir</h1>
+<h1>Bbyyy I love you bht bhtt bhttt saaraaaaaa ❤️</h1>
 
 <p style="margin-top:20px">
 
-Simra,mere sath rehna babu humesha har situation me aur tum dekhna mai jo kuch tumse kehta hu sab karke dikhaunga — Insha Allah 💖  
+Simra, mere sath rehna bbu humesha har situation me aur tum dekhna mai jo kuch tumse kehta hu wo sab kuch karke dikhaunga — Insha Allah 💖  
 I promise bbyyyyyy main har pal tumhare sath rahunga.....humesha humesha 💖
 
 </p>
@@ -191,7 +196,7 @@ I promise bbyyyyyy main har pal tumhare sath rahunga.....humesha humesha 💖
 
 <div class="card hidden" id="s4">
 
-<h1>Happiest birthday to love of my life  ❤️</h1>
+<h1>Happiest Birthday To Love Of My Life - Keep Shining ❤️</h1>
 
 <img src="simra.jpg" class="photo">
 
@@ -211,7 +216,7 @@ document.getElementById(id).classList.remove("hidden");
 
 }
 
-/* hearts */
+/* floating hearts */
 
 function createHeart(){
 
