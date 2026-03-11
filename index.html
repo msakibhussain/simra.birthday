@@ -190,7 +190,8 @@ var user=prompt("Enter Password to Open Surprise ❤️");
 
 if(user!==password){
 
-document.write("<h2 style='color:white;font-family:Poppins;text-align:center;margin-top:40vh'>Wrong Password ❌</h2>");
+alert("Wrong Password") ;
+  location.reload();
 
 }
 
@@ -239,7 +240,7 @@ I promise main har pal tumhare sath rahunga 💖
 
 </div>
 
-<div id="love" class="popup hidden">
+<div id="love" class="popup hidden" style="display:none;">
 
 <div>I Love You Meri Pyari Si Jaan ❤️</div>
 
@@ -261,14 +262,16 @@ document.getElementById(id).classList.remove("hidden");
 
 function finalLove(){
 
-document.getElementById("love").classList.remove("hidden");
+let popup = document.getElemntById("love");
+  popup.classList.remove("hidden");
+  popup.style.display="flex";
 
 }
 
-/* 30 second auto change */
+/* 10 second auto change */
 setTimeout(function(){
 next('s2');
-},30000);
+},10000);
 
 /* Hearts animation */
 
@@ -330,4 +333,5 @@ draw()
 
 </body>
 </html>
+
 
