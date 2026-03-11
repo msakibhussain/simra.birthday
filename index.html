@@ -47,7 +47,7 @@ overflow:hidden;
 width:90%;
 max-width:650px;
 
-padding:45px 30px 90px 30px;
+padding:40px 30px;
 
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(14px);
@@ -57,8 +57,14 @@ border-radius:25px;
 box-shadow:0 15px 50px rgba(0,0,0,0.3);
 
 text-align:center;
-position:relative;
 
+animation:fadeIn .8s;
+
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
 
 h1{
@@ -74,10 +80,7 @@ font-size:18px;
 
 button{
 
-position:absolute;
-bottom:25px;
-left:50%;
-transform:translateX(-50%);
+margin-top:30px;
 
 padding:14px 32px;
 
@@ -96,7 +99,7 @@ transition:.3s;
 }
 
 button:hover{
-transform:translateX(-50%) scale(1.1);
+transform:scale(1.1);
 }
 
 .hidden{
@@ -147,6 +150,7 @@ font-size:42px;
 .photo{
 
 width:260px;
+
 margin-top:20px;
 
 border-radius:20px;
@@ -206,8 +210,6 @@ document.write("<h2 style='color:white;font-family:Poppins;text-align:center;mar
 <p>You make my everyday special</p>
 <p>Haan aaj tumhara din hai par tumse mera har din hai ❤️</p>
 
-<button onclick="next('s2')">⚠️ Yahan Click Mat Karna</button>
-
 </div>
 
 <div class="card hidden" id="s2">
@@ -262,6 +264,13 @@ function finalLove(){
 document.getElementById("love").classList.remove("hidden");
 
 }
+
+/* 30 second auto change */
+setTimeout(function(){
+next('s2');
+},30000);
+
+/* Hearts animation */
 
 const canvas=document.getElementById("hearts");
 
