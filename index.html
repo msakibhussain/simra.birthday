@@ -54,9 +54,23 @@ margin-top:8px;
 font-size:18px;
 }
 
-.hidden{
-display:none;
+button{
+margin-top:30px;
+padding:14px 32px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff2f75;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
 }
+
+button:hover{
+transform:scale(1.1);
+}
+
+.hidden{display:none;}
 
 .popup{
 position:fixed;
@@ -101,15 +115,15 @@ var password="iloveyoumeripyarisimmo";
 var user=prompt("Enter Password ❤️");
 
 if(user!==password){
-
 alert("Wrong Password ❌");
 location.reload();
-
 }
 
 </script>
 
 <canvas id="hearts"></canvas>
+
+<!-- PAGE 1 -->
 
 <div class="card" id="s1">
 
@@ -119,7 +133,11 @@ location.reload();
 <p>You make my everyday special</p>
 <p>Tumse mera har din special hai ❤️</p>
 
+<button onclick="next('s2')">⚠️ Yaha Click Mat Karna</button>
+
 </div>
+
+<!-- PAGE 2 -->
 
 <div class="card hidden" id="s2">
 
@@ -129,7 +147,11 @@ location.reload();
 <p>Maine mana kiya tha na...</p>
 <p>Chalo koi baat nahi 😄</p>
 
+<button onclick="next('s3')">❌ Ab Yaha Mat Karna Click</button>
+
 </div>
+
+<!-- PAGE 3 -->
 
 <div class="card hidden" id="s3">
 
@@ -142,9 +164,13 @@ I promise main har pal tumhare sath rahunga 💖
 
 </p>
 
+<button onclick="finalLove()">💖 Ek Last Surprise</button>
+
 </div>
 
-<div id="love" class="popup" style="display:none;">
+<!-- FINAL POPUP -->
+
+<div id="love" class="popup hidden">
 
 <div>I Love You Meri Pyari Si Jaan ❤️</div>
 
@@ -156,31 +182,33 @@ I promise main har pal tumhare sath rahunga 💖
 
 <script>
 
-function show(id){
+function next(id){
 
-document.querySelectorAll(".card").forEach(x=>x.style.display="none");
+document.querySelectorAll(".card").forEach(x=>x.classList.add("hidden"));
 
-document.getElementById(id).style.display="block";
+document.getElementById(id).classList.remove("hidden");
 
 }
 
-window.onload=function(){
+function finalLove(){
 
-setTimeout(()=>show("s2"),10000);
+let popup=document.getElementById("love");
 
-setTimeout(()=>show("s3"),20000);
+popup.classList.remove("hidden");
 
-setTimeout(()=>{
-document.getElementById("love").style.display="flex";
-},30000);
+setTimeout(function(){
 
-setTimeout(()=>{
-document.getElementById("love").style.display="none";
-},40000);
+popup.classList.add("hidden");
 
-};
+},10000);
 
-/* hearts animation */
+}
+
+/* AUTO CHANGE */
+
+setTimeout(()=>next("s2"),10000);
+
+/* HEART ANIMATION */
 
 const canvas=document.getElementById("hearts");
 const ctx=canvas.getContext("2d");
@@ -191,16 +219,12 @@ canvas.height=window.innerHeight;
 let hearts=[];
 
 for(let i=0;i<35;i++){
-
 hearts.push({
-
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*6+4,
 speed:Math.random()*1+0.5
-
 })
-
 }
 
 function draw(){
@@ -218,10 +242,8 @@ ctx.fill();
 h.y-=h.speed;
 
 if(h.y<0){
-
 h.y=canvas.height;
 h.x=Math.random()*canvas.width;
-
 }
 
 })
