@@ -11,7 +11,11 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 
@@ -23,12 +27,12 @@ justify-content:center;
 color:white;
 overflow:hidden;
 
-/* NEW BACKGROUND */
+/* Romantic Background */
 
-background-image:url("https://www.transparenttextures.com/patterns/hearts.png"),
-linear-gradient(black,black);
-
-background-size:180px,cover;
+background-image:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 
 }
 
@@ -36,25 +40,26 @@ background-size:180px,cover;
 
 .heart{
 position:fixed;
-bottom:-20px;
-font-size:20px;
+bottom:-40px;
+font-size:24px;
 color:#ff4d6d;
-animation:float 6s linear infinite;
+animation:float 8s linear infinite;
+filter:drop-shadow(0 0 10px #ff4d6d);
 opacity:.9;
 }
 
 @keyframes float{
 
 0%{
-transform:translateY(0) scale(0.8);
+transform:translateY(0) scale(.7) rotate(0deg);
 }
 
 50%{
-transform:translateY(-50vh) scale(1.3);
+transform:translateY(-50vh) scale(1.3) rotate(180deg);
 }
 
 100%{
-transform:translateY(-100vh) scale(0.7);
+transform:translateY(-110vh) scale(.8) rotate(360deg);
 }
 
 }
@@ -95,7 +100,6 @@ font-size:18px;
 button{
 
 margin-top:30px;
-
 padding:14px 32px;
 
 border:none;
@@ -105,7 +109,6 @@ background:#ff4d6d;
 color:white;
 
 font-weight:600;
-
 cursor:pointer;
 
 transition:.3s;
@@ -224,19 +227,18 @@ const heart=document.createElement("div");
 
 heart.className="heart";
 
-heart.innerHTML="❤️";
+heart.innerHTML="💖";
 
 heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=(Math.random()*20+10)+"px";
+heart.style.fontSize=(Math.random()*25+15)+"px";
 
 document.body.appendChild(heart);
 
-setTimeout(()=>heart.remove(),6000);
+setTimeout(()=>heart.remove(),8000);
 
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,400);
 
 </script>
 
