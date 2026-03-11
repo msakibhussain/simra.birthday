@@ -18,22 +18,16 @@ box-sizing:border-box;
 }
 
 body{
-
 font-family:Poppins;
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-
 color:white;
-
 background:linear-gradient(-45deg,#ff4e8a,#ff7eb3,#ff9ac2,#ff4e8a);
 background-size:400% 400%;
-
 animation:bgMove 10s infinite linear;
-
 overflow:hidden;
-
 }
 
 @keyframes bgMove{
@@ -43,23 +37,15 @@ overflow:hidden;
 }
 
 .card{
-
 width:90%;
 max-width:650px;
-
 padding:40px 30px;
-
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(14px);
-
 border-radius:25px;
-
 box-shadow:0 15px 50px rgba(0,0,0,0.3);
-
 text-align:center;
-
 animation:fadeIn .8s;
-
 }
 
 @keyframes fadeIn{
@@ -79,23 +65,15 @@ font-size:18px;
 }
 
 button{
-
 margin-top:30px;
-
 padding:14px 32px;
-
 border:none;
 border-radius:30px;
-
 background:white;
 color:#ff2f75;
-
 font-weight:600;
-
 cursor:pointer;
-
 transition:.3s;
-
 }
 
 button:hover{
@@ -107,15 +85,11 @@ display:none;
 }
 
 .typing{
-
 margin-top:20px;
 font-size:18px;
 line-height:1.7;
-
 animation:fadeText 3s forwards;
-
 opacity:0;
-
 }
 
 @keyframes fadeText{
@@ -123,51 +97,34 @@ to{opacity:1}
 }
 
 .popup{
-
 position:fixed;
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 background:rgba(0,0,0,.9);
-
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-
 text-align:center;
-
 z-index:999;
-
 font-family:"Great Vibes";
 font-size:42px;
-
 }
 
 .photo{
-
 width:260px;
-
 margin-top:20px;
-
 border-radius:20px;
-
 box-shadow:0 10px 30px rgba(0,0,0,.6);
-
 border:4px solid white;
-
 animation:zoom 6s infinite alternate;
-
 }
 
 @keyframes zoom{
-
 from{transform:scale(1)}
 to{transform:scale(1.08)}
-
 }
 
 canvas{
@@ -189,10 +146,8 @@ var password="iloveyoumeripyarisimmo";
 var user=prompt("Enter Password to Open Surprise ❤️");
 
 if(user!==password){
-
-alert("Wrong Password") ;
-  location.reload();
-
+alert("Wrong Password ❌");
+location.reload();
 }
 
 </script>
@@ -240,7 +195,7 @@ I promise main har pal tumhare sath rahunga 💖
 
 </div>
 
-<div id="love" class="popup hidden" style="display:none;">
+<div id="love" class="popup hidden">
 
 <div>I Love You Meri Pyari Si Jaan ❤️</div>
 
@@ -253,30 +208,23 @@ I promise main har pal tumhare sath rahunga 💖
 <script>
 
 function next(id){
-
 document.querySelectorAll(".card").forEach(x=>x.classList.add("hidden"));
-
 document.getElementById(id).classList.remove("hidden");
-
 }
 
 function finalLove(){
-
-let popup = document.getElemntById("love");
-  popup.classList.remove("hidden");
-  popup.style.display="flex";
-
+document.getElementById("love").classList.remove("hidden");
 }
 
 /* 10 second auto change */
+
 setTimeout(function(){
 next('s2');
 },10000);
 
-/* Hearts animation */
+/* hearts animation */
 
 const canvas=document.getElementById("hearts");
-
 const ctx=canvas.getContext("2d");
 
 canvas.width=window.innerWidth;
@@ -284,17 +232,13 @@ canvas.height=window.innerHeight;
 
 let hearts=[];
 
-for(let i=0;i<40;i++){
-
+for(let i=0;i<35;i++){
 hearts.push({
-
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*6+4,
 speed:Math.random()*1+0.5
-
 })
-
 }
 
 function draw(){
@@ -306,19 +250,14 @@ ctx.fillStyle="rgba(255,0,100,0.8)";
 hearts.forEach(h=>{
 
 ctx.beginPath();
-
 ctx.arc(h.x,h.y,h.size,0,Math.PI*2);
-
 ctx.fill();
 
 h.y-=h.speed;
 
 if(h.y<0){
-
 h.y=canvas.height;
-
 h.x=Math.random()*canvas.width;
-
 }
 
 })
@@ -333,5 +272,3 @@ draw()
 
 </body>
 </html>
-
-
