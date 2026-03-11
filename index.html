@@ -11,11 +11,7 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:Poppins;
@@ -76,13 +72,9 @@ cursor:pointer;
 transition:.3s;
 }
 
-button:hover{
-transform:scale(1.1);
-}
+button:hover{transform:scale(1.1);}
 
-.hidden{
-display:none;
-}
+.hidden{display:none;}
 
 .typing{
 margin-top:20px;
@@ -92,9 +84,7 @@ animation:fadeText 3s forwards;
 opacity:0;
 }
 
-@keyframes fadeText{
-to{opacity:1}
-}
+@keyframes fadeText{to{opacity:1}}
 
 .popup{
 position:fixed;
@@ -140,16 +130,13 @@ z-index:-1;
 <body>
 
 <script>
-
 var password="iloveyoumeripyarisimmo";
-
 var user=prompt("Enter Password to Open Surprise ❤️");
 
 if(user!==password){
 alert("Wrong Password ❌");
 location.reload();
 }
-
 </script>
 
 <canvas id="hearts"></canvas>
@@ -159,50 +146,35 @@ location.reload();
 </audio>
 
 <div class="card" id="s1">
-
 <h1>Happy Birthday Simra ❤️</h1>
-
 <p>Mere pyare se bbyyyyyy</p>
 <p>You make my everyday special</p>
 <p>Haan aaj tumhara din hai par tumse mera har din hai ❤️</p>
-
 </div>
 
 <div class="card hidden" id="s2">
-
 <h1>Simra 😏</h1>
-
 <p>Kyu kar diya click?</p>
 <p>Maine mana kiya tha na...</p>
 <p>Chalo koi baat nahi 😄</p>
-
 <button onclick="next('s3')">❌ Ab Yaha Mat Karna Click</button>
-
 </div>
 
 <div class="card hidden" id="s3">
-
 <h1>Mujhe pata tha tum click karogi</h1>
 
 <div class="typing">
-
 Simra, just stay with me aur tum dekhna duniya ki har khushi tumhare kadmo me hogi — Insha Allah 💖  
 I promise main har pal tumhare sath rahunga 💖
-
 </div>
 
 <button onclick="finalLove()">💖 Ek Last Surprise</button>
-
 </div>
 
 <div id="love" class="popup hidden">
-
 <div>I Love You Meri Pyari Si Jaan ❤️</div>
-
 <img src="simra.jpg" class="photo">
-
 <p style="font-size:24px;margin-top:10px;">Forever With You 💖</p>
-
 </div>
 
 <script>
@@ -216,15 +188,22 @@ function finalLove(){
 document.getElementById("love").classList.remove("hidden");
 }
 
-/* 10 second auto change */
+/* AUTO PAGE FLOW */
 
-window.onload = function(){
+window.onload=function(){
 
 setTimeout(function(){
-
 next('s2');
-
 },10000);
+
+setTimeout(function(){
+next('s3');
+},20000);
+
+setTimeout(function(){
+finalLove();
+},30000);
+
 };
 
 /* hearts animation */
@@ -277,4 +256,3 @@ draw()
 
 </body>
 </html>
-
