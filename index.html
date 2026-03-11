@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Simra ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -10,156 +11,163 @@
 <style>
 
 *{
+margin:0;
+padding:0;
 box-sizing:border-box;
 }
 
 body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#ff4e8a,#ff9ac2);
-color:white;
-text-align:center;
-min-height:100vh;
+font-family:Poppins;
+height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
+color:white;
+background:linear-gradient(-45deg,#ff4e8a,#ff7eb3,#ff9ac2,#ff4e8a);
+background-size:400% 400%;
+animation:bgMove 10s infinite linear;
 overflow:hidden;
 }
 
-.container{
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.card{
+
 width:90%;
 max-width:650px;
-padding:40px 25px 100px 25px;
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(10px);
-border-radius:22px;
-box-shadow:0 15px 40px rgba(0,0,0,0.25);
+padding:45px 30px 90px 30px;
+
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(14px);
+
+border-radius:25px;
+
+box-shadow:
+0 15px 50px rgba(0,0,0,0.3);
+
+text-align:center;
 position:relative;
+
+animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 h1{
-font-family:'Great Vibes',cursive;
-font-size:52px;
+font-family:"Great Vibes";
+font-size:55px;
 margin-bottom:10px;
 }
 
 p{
+margin-top:8px;
 font-size:18px;
-line-height:1.6;
-margin:6px 0;
 }
 
 button{
-padding:14px 30px;
-border:none;
-border-radius:30px;
-font-size:16px;
-cursor:pointer;
-background:white;
-color:#ff2f75;
-font-weight:600;
-transition:0.3s;
+
 position:absolute;
 bottom:25px;
 left:50%;
 transform:translateX(-50%);
+
+padding:14px 32px;
+
+border:none;
+border-radius:30px;
+
+background:white;
+color:#ff2f75;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
 }
 
 button:hover{
-transform:translateX(-50%) scale(1.08);
+
+transform:translateX(-50%) scale(1.1);
+
 }
 
 .hidden{
 display:none;
 }
 
-.cake{
-font-size:70px;
-margin-bottom:10px;
-animation:bounce 1.5s infinite;
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-}
-
 .typing{
+
 margin-top:20px;
 font-size:18px;
-line-height:1.7;
-animation:fadeText 4s ease forwards;
+
+animation:fadeText 3s forwards;
 opacity:0;
+
 }
 
 @keyframes fadeText{
 to{opacity:1}
 }
 
-.heart{
-position:absolute;
-width:18px;
-height:18px;
-background:red;
-transform:rotate(45deg);
-animation:float 6s linear infinite;
-}
-
-.heart:before,.heart:after{
-content:"";
-position:absolute;
-width:18px;
-height:18px;
-background:red;
-border-radius:50%;
-}
-
-.heart:before{top:-9px}
-.heart:after{left:-9px}
-
-@keyframes float{
-0%{transform:translateY(100vh) rotate(45deg)}
-100%{transform:translateY(-10vh) rotate(45deg)}
-}
-
 .popup{
+
 position:fixed;
 top:0;
 left:0;
+
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.92);
+
+background:rgba(0,0,0,.9);
+
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
-font-family:'Great Vibes',cursive;
-font-size:42px;
+justify-content:center;
+
+text-align:center;
+
 z-index:999;
+
+font-family:"Great Vibes";
+
+font-size:42px;
+
 }
 
-.couple-photo{
-width:240px;
-border-radius:20px;
+.photo{
+
+width:260px;
+
 margin-top:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+
 }
 
-.skyName{
+canvas{
 position:fixed;
-top:25%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:70px;
-font-family:'Great Vibes',cursive;
-opacity:0;
-animation:showName 3s forwards;
-pointer-events:none;
-}
-
-@keyframes showName{
-0%{opacity:0;transform:translate(-50%,-80%)}
-100%{opacity:1;transform:translate(-50%,-50%)}
+top:0;
+left:0;
+z-index:-1;
 }
 
 </style>
@@ -167,83 +175,130 @@ pointer-events:none;
 
 <body>
 
+<canvas id="hearts"></canvas>
+
 <audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3">
 </audio>
 
-<div class="container" id="screen1">
-
-<div class="cake">🎂</div>
+<div class="card" id="s1">
 
 <h1>Happy Birthday Simra ❤️</h1>
 
-<p>Mere pyare se bbyyyyyy.</p>
-<p>You make my everyday special.</p>
+<p>Mere pyare se bbyyyyyy</p>
+<p>You make my everyday special</p>
 <p>Haan aaj tumhara din hai par tumse mera har din hai ❤️</p>
 
-<button onclick="next('screen2')">⚠️ Yahan Click Mat Karna</button>
+<button onclick="next('s2')">⚠️ Yahan Click Mat Karna</button>
 
 </div>
 
-<div class="container hidden" id="screen2">
+<div class="card hidden" id="s2">
 
 <h1>Simra 😏</h1>
 
 <p>Kyu kar diya click?</p>
 <p>Maine mana kiya tha na...</p>
-<p>Chalo koi baat nahi ab kar diya to</p>
+<p>Chalo koi baat nahi 😄</p>
 
-<button onclick="next('screen3')">❌ Ab Yaha Mat Karna Click</button>
+<button onclick="next('s3')">❌ Ab Yaha Mat Karna Click</button>
 
 </div>
 
-<div class="container hidden" id="screen3">
+<div class="card hidden" id="s3">
 
-<h1>Mujhe pata hai nahi manogi tum</h1>
+<h1>Mujhe pata tha tum click karogi</h1>
 
 <div class="typing">
-Simra, Just stay with me aur tum dekhna duniya ki har khushi tumhare kadmo me hogi — Insha Allah 💖.  
-I promise ki main har pal tumhare sath rahunga aur tumhara sath dunga 💖.
+
+Simra, just stay with me aur tum dekhna duniya ki har khushi tumhare kadmo me hogi — Insha Allah 💖  
+I promise main har pal tumhare sath rahunga 💖
+
 </div>
 
 <button onclick="finalLove()">💖 Ek Last Surprise</button>
 
 </div>
 
-<div id="lovePopup" class="popup hidden">
+<div id="love" class="popup hidden">
 
 <div>I Love You Meri Pyari Si Jaan ❤️</div>
 
-<img src="photo.jpg" class="couple-photo">
+<img src="photo.jpg" class="photo">
 
-<p style="font-size:22px">Forever with you 💖</p>
+<p style="font-size:24px;margin-top:10px;">Forever With You 💖</p>
 
 </div>
-
-<div id="skyText" class="skyName">SIMRA ❤️</div>
 
 <script>
 
 function next(id){
-document.querySelectorAll('.container').forEach(x=>x.classList.add('hidden'));
-document.getElementById(id).classList.remove('hidden');
-}
 
-function createHeart(){
-const heart=document.createElement('div');
-heart.className='heart';
-heart.style.left=Math.random()*100+'vw';
-heart.style.animationDuration=(Math.random()*3+3)+'s';
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),6000);
-}
+document.querySelectorAll(".card").forEach(x=>x.classList.add("hidden"));
 
-setInterval(createHeart,300);
+document.getElementById(id).classList.remove("hidden");
+
+}
 
 function finalLove(){
-document.getElementById('lovePopup').classList.remove('hidden');
-document.getElementById('skyText').style.opacity=1;
+
+document.getElementById("love").classList.remove("hidden");
+
 }
+
+const canvas=document.getElementById("hearts");
+
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let hearts=[];
+
+for(let i=0;i<40;i++){
+
+hearts.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*6+4,
+speed:Math.random()*1+0.5
+
+})
+
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="rgba(255,0,100,0.8)";
+
+hearts.forEach(h=>{
+
+ctx.beginPath();
+
+ctx.arc(h.x,h.y,h.size,0,Math.PI*2);
+
+ctx.fill();
+
+h.y-=h.speed;
+
+if(h.y<0){
+
+h.y=canvas.height;
+
+h.x=Math.random()*canvas.width;
+
+}
+
+})
+
+requestAnimationFrame(draw)
+
+}
+
+draw()
 
 </script>
 
