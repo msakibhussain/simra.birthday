@@ -46,25 +46,30 @@ background-blend-mode:darken;
 .heart{
 position:fixed;
 bottom:-40px;
-font-size:24px;
-color:#ff4d6d;
-animation:float 8s linear infinite;
-filter:drop-shadow(0 0 10px #ff4d6d);
-opacity:.9;
+width:18px;
+height:18px;
+
+background-image:url("https://pngimg.com/uploads/heart/heart_PNG51337.png");
+background-size:contain;
+background-repeat:no-repeat;
+
+animation:float 9s linear infinite;
+
+opacity:0.9;
 }
 
 @keyframes float{
 
 0%{
-transform:translateY(0) scale(.7) rotate(0deg);
+transform:translateY(0) scale(.6) rotate(0deg);
 }
 
 50%{
-transform:translateY(-50vh) scale(1.3) rotate(180deg);
+transform:translateY(-50vh) scale(.9) rotate(180deg);
 }
 
 100%{
-transform:translateY(-110vh) scale(.8) rotate(360deg);
+transform:translateY(-110vh) scale(.7) rotate(360deg);
 }
 
 }
@@ -232,18 +237,18 @@ const heart=document.createElement("div");
 
 heart.className="heart";
 
-heart.innerHTML="💖";
-
 heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*25+15)+"px";
+
+heart.style.width=(Math.random()*20+10)+"px";
+heart.style.height=heart.style.width;
 
 document.body.appendChild(heart);
 
-setTimeout(()=>heart.remove(),8000);
+setTimeout(()=>heart.remove(),9000);
 
 }
 
-setInterval(createHeart,400);
+setInterval(createHeart,500);
 
 </script>
 
