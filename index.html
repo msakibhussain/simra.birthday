@@ -54,7 +54,9 @@ margin-top:8px;
 font-size:18px;
 }
 
-.hidden{display:none;}
+.hidden{
+display:none;
+}
 
 .popup{
 position:fixed;
@@ -94,12 +96,15 @@ z-index:-1;
 
 <script>
 
-var password="formyprincess";
+var password="iloveyoumeripyarisimmo";
+
 var user=prompt("Enter Password ❤️");
 
 if(user!==password){
-alert("Wrong Password");
+
+alert("Wrong Password ❌");
 location.reload();
+
 }
 
 </script>
@@ -107,20 +112,27 @@ location.reload();
 <canvas id="hearts"></canvas>
 
 <div class="card" id="s1">
+
 <h1>Happy Birthday Simra ❤️</h1>
+
 <p>Mere pyare se bbyyyyyy</p>
 <p>You make my everyday special</p>
 <p>Tumse mera har din special hai ❤️</p>
+
 </div>
 
 <div class="card hidden" id="s2">
+
 <h1>Simra 😏</h1>
+
 <p>Kyu kar diya click?</p>
 <p>Maine mana kiya tha na...</p>
 <p>Chalo koi baat nahi 😄</p>
+
 </div>
 
 <div class="card hidden" id="s3">
+
 <h1>Mujhe pata tha tum click karogi</h1>
 
 <p style="margin-top:20px">
@@ -132,7 +144,7 @@ I promise main har pal tumhare sath rahunga 💖
 
 </div>
 
-<div id="love" class="popup hidden">
+<div id="love" class="popup" style="display:none;">
 
 <div>I Love You Meri Pyari Si Jaan ❤️</div>
 
@@ -144,17 +156,13 @@ I promise main har pal tumhare sath rahunga 💖
 
 <script>
 
-/* show function */
-
 function show(id){
 
-document.querySelectorAll(".card").forEach(x=>x.classList.add("hidden"));
+document.querySelectorAll(".card").forEach(x=>x.style.display="none");
 
-document.getElementById(id).classList.remove("hidden");
+document.getElementById(id).style.display="block";
 
 }
-
-/* timeline */
 
 window.onload=function(){
 
@@ -163,11 +171,11 @@ setTimeout(()=>show("s2"),10000);
 setTimeout(()=>show("s3"),20000);
 
 setTimeout(()=>{
-document.getElementById("love").classList.remove("hidden");
+document.getElementById("love").style.display="flex";
 },30000);
 
 setTimeout(()=>{
-document.getElementById("love").classList.add("hidden");
+document.getElementById("love").style.display="none";
 },40000);
 
 };
@@ -183,12 +191,16 @@ canvas.height=window.innerHeight;
 let hearts=[];
 
 for(let i=0;i<35;i++){
+
 hearts.push({
+
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*6+4,
 speed:Math.random()*1+0.5
+
 })
+
 }
 
 function draw(){
@@ -206,8 +218,10 @@ ctx.fill();
 h.y-=h.speed;
 
 if(h.y<0){
+
 h.y=canvas.height;
 h.x=Math.random()*canvas.width;
+
 }
 
 })
