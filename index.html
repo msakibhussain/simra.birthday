@@ -66,28 +66,9 @@ cursor:pointer;
 transition:.3s;
 }
 
-button:hover{
-transform:scale(1.1);
-}
+button:hover{transform:scale(1.1);}
 
 .hidden{display:none;}
-
-.popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.9);
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-z-index:999;
-font-family:"Great Vibes";
-font-size:42px;
-}
 
 .photo{
 width:260px;
@@ -111,7 +92,6 @@ z-index:-1;
 <script>
 
 var password="iloveyoumeripyarisimmo";
-
 var user=prompt("Enter Password ❤️");
 
 if(user!==password){
@@ -164,19 +144,19 @@ I promise main har pal tumhare sath rahunga 💖
 
 </p>
 
-<button onclick="finalLove()">💖 Ek Last Surprise</button>
+<button onclick="next('s4')">💖 Ek Last Surprise</button>
 
 </div>
 
-<!-- FINAL POPUP -->
+<!-- FINAL PAGE -->
 
-<div id="love" class="popup hidden">
+<div class="card hidden" id="s4">
 
-<div>I Love You Meri Pyari Si Jaan ❤️</div>
+<h1>I Love You Meri Pyari Si Jaan ❤️</h1>
 
 <img src="simra.jpg" class="photo">
 
-<p style="font-size:24px;margin-top:10px;">Forever With You 💖</p>
+<p style="font-size:22px;margin-top:10px;">Forever With You 💖</p>
 
 </div>
 
@@ -190,21 +170,7 @@ document.getElementById(id).classList.remove("hidden");
 
 }
 
-function finalLove(){
-
-let popup=document.getElementById("love");
-
-popup.classList.remove("hidden");
-
-setTimeout(function(){
-
-popup.classList.add("hidden");
-
-},10000);
-
-}
-
-/* AUTO CHANGE */
+/* AUTO PAGE CHANGE */
 
 setTimeout(()=>next("s2"),10000);
 
